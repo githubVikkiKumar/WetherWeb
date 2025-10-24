@@ -1,0 +1,275 @@
+.left-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .left-container {
+    min-height: 300px;
+  }
+  
+  .left-container-nav-bar {
+    flex: 1.5;
+    padding: 10px;
+  }
+  
+  .left-container-data-box {
+    flex: 2;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-container-nav-bar {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .left-container-data-box {
+    flex: 3;
+    padding: 5px;
+  }
+}
+
+/* CSS for left container nav bar */
+
+.left-container-nav-bar {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-icon {
+  flex: 2;
+  text-align: right;
+  margin-right: 5px;
+}
+.search-input-container {
+    flex: 4;
+    position: relative;
+}
+
+.search-input-container input{
+    border: none;
+    padding: 8px;
+    font-size: 11px;
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Suggestions Dropdown Styles */
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 2px;
+}
+
+.suggestion-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.location-icon {
+    flex: 2;
+    text-align: center;
+    margin-top: -2px;
+    margin-right: 10px;
+}
+
+.location-icon fa-icon{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #f6f6f8;
+    border-radius: 500px;
+}
+/* ======================================================================================== */
+/* CSS for left container data */
+
+.left-container-data-box {
+  flex: 12;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Temperature Data: Image, Value and Day-Time */
+.left-container-temp-data{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.left-container-temp-img{
+  flex: 2;
+}
+
+.left-container-temp-img img{
+  width: 160px;
+  height: 160px;
+}
+
+.left-container-temp-value{
+  flex: 1;
+  font-size: 62px;
+  font-weight: normal;
+
+}
+
+.left-container-temp-value sup{
+  position: relative;
+  top: 3px;
+  font-size: 36px;
+}
+
+.left-container-day-time{
+  flex: 1;
+  font-weight: 500;
+  color: black;
+  font-size: 14px;
+}
+.left-container-day-time span{
+  color: #c9c9c9;
+}
+
+.dividing-line{
+  height: 1px;
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Temperature Details: Summary Phrase, Rain Value, Location Image and Location Details */
+.left-container-other-details{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.left-container-temp-summary{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+  font-weight: 500;
+}
+.left-container-temp-summary-phrase-img{
+  margin-right: 8px;
+}
+.left-container-rain-stats{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+  font-weight: 500;
+}
+.left-container-rain-stats-img{
+  margin-right: 10px;
+}
+.left-container-location-details{
+  flex: 4;
+  text-align: center;
+}
+.left-container-location-img{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.left-container-location-img img{
+  width: 200px;
+  height: 70px;
+  border-radius: 20px;
+}
+.left-container-location-name{
+  margin-top: -80px;
+  font-size: medium;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Loading indicator styles */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4050d2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Refresh Icon Styles */
+.refresh-icon {
+    flex: 2;
+    text-align: center;
+    margin-top: -2px;
+    margin-right: 10px;
+}
+
+.refresh-icon fa-icon{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #28a745;
+    border-radius: 500px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.refresh-icon fa-icon:hover {
+    background-color: #1e7e34;
+    transform: scale(1.1);
+}

@@ -1,0 +1,68 @@
+.app-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #d6d7da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.weather-container{
+    height: 95vh;
+    width: 98vw;
+    max-width: 1400px;
+    max-height: 900px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .weather-container {
+        height: 95vh;
+        width: 98vw;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    
+    .left-container {
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .right-container {
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-container {
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0;
+    }
+    
+    .left-container {
+        border-radius: 0;
+    }
+    
+    .right-container {
+        border-radius: 0;
+    }
+}
+.left-container{
+    flex: 3;
+    background-color: #ffffff;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius:30px;
+}
+.right-container{
+    flex: 7;
+    background-color: #f6f6f8;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
